@@ -53,7 +53,11 @@ export const metadata: Metadata = {
     images: [seo.ogImage],
   },
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/icon-32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],
   },
   robots: { index: true, follow: true },
 };
@@ -75,7 +79,7 @@ const organizationLd = {
   name: brand.name,
   legalName: brand.legal,
   url: seo.siteUrl,
-  logo: `${seo.siteUrl}/favicon.svg`,
+  logo: `${seo.siteUrl}/icon-512.png`,
   sameAs: [brand.linkedinUrl],
   contactPoint: {
     '@type': 'ContactPoint',

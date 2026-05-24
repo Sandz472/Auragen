@@ -11,9 +11,12 @@ type WordmarkProps = {
 /**
  * The Aura Gen wordmark.
  *
- * Per spec §08, this is the primary brand mark: a small gold dot accent before
- * the word "Aura Gen" set in the display face. The dot doubles as a soft glow
- * source on hover to reinforce the "aura" metaphor without being literal.
+ * Per spec §08, this is the primary brand mark: the gold hexagonal "cube"
+ * logo paired with the "Aura Gen" name in the display face. The mark is a
+ * flat-gold, transparent rendering of the brand logo so it sits cleanly on
+ * both light and dark surfaces, while the name is set in CSS so it stays
+ * crisp and theme-aware. The mark picks up a soft gold glow on hover to
+ * reinforce the "aura" metaphor without being literal.
  */
 export default function Wordmark({
   variant = 'light',
@@ -23,8 +26,8 @@ export default function Wordmark({
   const textColor = variant === 'dark' ? 'text-white' : 'text-ink';
   const sizing =
     size === 'sm'
-      ? { text: 'text-[16px]', dot: 'h-1.5 w-1.5' }
-      : { text: 'text-[18px]', dot: 'h-2 w-2' };
+      ? { text: 'text-[16px]', mark: 'h-5' }
+      : { text: 'text-[18px]', mark: 'h-6' };
 
   const inner = (
     <span
@@ -34,19 +37,19 @@ export default function Wordmark({
         sizing.text,
       )}
     >
-      <span className="relative inline-flex">
-        <span
-          className={cn(
-            'inline-block rounded-full bg-gold transition-shadow duration-300 ease-aura group-hover:shadow-[0_0_18px_rgba(232,163,58,0.7)]',
-            sizing.dot,
-          )}
-          aria-hidden
-        />
-      </span>
-      <span>
-        Aura<span className="font-light text-gold">·</span>Gen
-      </span>
-      <span className="sr-only">{brand.name}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export, decorative mark */}
+      <img
+        src="/logo-mark.png"
+        alt=""
+        aria-hidden
+        width={313}
+        height={351}
+        className={cn(
+          'w-auto transition-[filter] duration-300 ease-aura group-hover:drop-shadow-[0_0_14px_rgba(232,163,58,0.6)]',
+          sizing.mark,
+        )}
+      />
+      <span>Aura Gen</span>
     </span>
   );
 

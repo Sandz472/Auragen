@@ -86,11 +86,12 @@ const config: Config = {
         'glow-indigo': '0 0 120px rgba(79, 70, 229, 0.18)',
       },
       maxWidth: {
-        // Spec §07 calls for 1280px, but on 1920px+ monitors that left ~320px
-        // dead per side. 1440px keeps comfortable reading widths inside (we
-        // still constrain the sub-paragraphs to max-w-2xl etc.) while putting
-        // the visual frame closer to the viewport edges on wide screens.
-        'page': '1440px',
+        // Spec §07 calls for 1280px, but on 1920px+ monitors that left a lot of
+        // dead margin per side and read as a narrow centered column. 1680px
+        // pulls the visual frame close to the edges of a 1920px viewport
+        // (~120px gutter per side) while readability is preserved because the
+        // sub-paragraphs stay constrained to max-w-2xl etc. inside the frame.
+        'page': '1680px',
       },
       spacing: {
         // Spec uses a 4px base which Tailwind defaults already cover (1=4px, 2=8px, etc.)
