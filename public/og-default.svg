@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow-gold" cx="20%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#E8A33A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E8A33A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-indigo" cx="90%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dot-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C56A"/>
+      <stop offset="100%" stop-color="#B4791F"/>
+    </linearGradient>
+  </defs>
+  <!-- Onyx background -->
+  <rect width="1200" height="630" fill="#0A0E1A"/>
+  <!-- Radial glows -->
+  <rect width="1200" height="630" fill="url(#glow-gold)"/>
+  <rect width="1200" height="630" fill="url(#glow-indigo)"/>
+  <!-- Subtle grid -->
+  <g stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 105 H1200 M0 210 H1200 M0 315 H1200 M0 420 H1200 M0 525 H1200"/>
+    <path d="M120 0 V630 M240 0 V630 M360 0 V630 M480 0 V630 M600 0 V630 M720 0 V630 M840 0 V630 M960 0 V630 M1080 0 V630"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(96 270)">
+    <circle cx="20" cy="42" r="18" fill="url(#dot-gold)"/>
+    <text x="58" y="60" font-family="Space Grotesk, sans-serif" font-size="76" font-weight="600" fill="#FFFFFF" letter-spacing="-2">
+      Aura<tspan fill="#E8A33A">·</tspan>Gen
+    </text>
+  </g>
+  <!-- Tagline -->
+  <text x="96" y="380" font-family="Space Grotesk, sans-serif" font-size="44" font-weight="500" fill="#FFFFFF" fill-opacity="0.92" letter-spacing="-1">
+    Intelligent data. Measurable impact.
+  </text>
+  <!-- Footnote -->
+  <text x="96" y="540" font-family="JetBrains Mono, monospace" font-size="20" font-weight="500" fill="#E8A33A" letter-spacing="3" text-anchor="start">
+    SOUTH AFRICAN · DATA · AI · CONSULTING
+  </text>
+  <!-- Bottom hairline -->
+  <line x1="96" y1="568" x2="1104" y2="568" stroke="#E8A33A" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="96" y="592" font-family="Inter, sans-serif" font-size="14" fill="#FFFFFF" fill-opacity="0.5">
+    auragen.co.za
+  </text>
+</svg>

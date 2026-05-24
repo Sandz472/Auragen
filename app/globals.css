@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Respect reduced motion globally */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    @apply font-sans bg-paper text-ink antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* Default heading family */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(232, 163, 58, 0.28);
+    color: #0A0E1A;
+  }
+
+  /* Anchor offset for sticky nav */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  /* Form field reset */
+  input, textarea, select, button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  /* Container — max page width with responsive horizontal padding.
+     xl padding eased from 120px → 80px to claw back a bit more horizontal
+     real estate on wide monitors without crowding the edge. */
+  .page-container {
+    @apply mx-auto w-full max-w-page px-6 md:px-10 lg:px-16 xl:px-20;
+  }
+
+  /* Eyebrow label — JetBrains Mono, uppercase, tracking-wide */
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase tracking-[0.18em];
+  }
+
+  /* Section vertical rhythm — spec §07 calls for 96–128px desktop, 64–80px mobile.
+     We pair this 80px with the hero's tight 56px bottom to land at ~136px total
+     hero→section gap — bottom of the spec range, reads as confident not airy. */
+  .section-pad {
+    @apply py-14 md:py-18 lg:py-20;
+  }
+
+  /* Focus ring helper — applied to interactive elements */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2;
+  }
+
+  .focus-ring-dark {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-onyx;
+  }
+}
+
+@layer utilities {
+  /* Grain texture overlay for dark sections — adds depth without imagery */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Skip link — visible on focus */
+  .skip-link {
+    @apply absolute left-4 top-4 -translate-y-20 focus:translate-y-0 z-50 bg-gold text-onyx px-4 py-2 rounded-btn font-medium text-btn transition-transform;
+  }
+
+  /* Hide horizontal scrollbar on the Services anchor strip (still scrollable) */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Prevent body horizontal scroll — defensive */
+  html, body {
+    overflow-x: clip;
+  }
+}
