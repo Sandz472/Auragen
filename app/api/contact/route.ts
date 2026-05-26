@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
 
   const { error } = await resend.emails.send({
-    from: 'AuraGen Contact Form <no-reply@auragen.co.za>',
+    from: 'AuraGen Contact Form <contact@auragen.co.za>',
     to: 'info@auragen.co.za',
     replyTo: d.workEmail,
     subject: `New enquiry from ${d.firstName} ${d.lastName} — ${d.organisation}`,

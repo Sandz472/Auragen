@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { brand, footer, nav } from '@/lib/copy';
 import { services } from '@/lib/services';
 import Wordmark from './Wordmark';
@@ -111,17 +111,6 @@ export default function Footer() {
                   className="text-white/75 transition-colors hover:text-gold focus-ring-dark rounded-sm"
                 >
                   {brand.phone2}
-                </a>
-              </li>
-              <li className="flex items-start gap-3 pt-2">
-                <a
-                  href={brand.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-btn border border-white/15 text-white/75 transition-all hover:border-gold hover:text-gold focus-ring-dark"
-                >
-                  <Linkedin size={16} />
                 </a>
               </li>
             </ul>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { useReducedMotion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 type RevealProps = {
@@ -38,8 +37,16 @@ export default function Reveal({
   once = true,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const reduce = useReducedMotion();
+  const [reduce, setReduce] = useState(false);
   const [state, setState] = useState<RevealState>('visible');
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduce(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduce(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   useEffect(() => {
     if (reduce) return;
@@ -73,7 +80,7 @@ export default function Reveal({
       obs.disconnect();
       clearTimeout(fallback);
     };
-  }, [reduce, once]);
+  }, [once]);
 
   const Tag = as as React.ElementType;
   const hidden = state === 'hidden';

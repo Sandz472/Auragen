@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mail, MapPin, Phone, Linkedin, Clock } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import ContactForm from '@/components/sections/ContactForm';
 import Reveal from '@/components/ui/Reveal';
@@ -87,27 +87,6 @@ export default function ContactPage() {
                         >
                           <Phone size={16} className="text-white/40 group-hover:text-gold" aria-hidden />
                           {brand.phone2}
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="h-px bg-white/10" aria-hidden />
-
-                    {/* Connect */}
-                    <div>
-                      <h2 className="flex items-center gap-2 font-mono text-eyebrow uppercase tracking-[0.18em] text-white/55">
-                        <Linkedin size={14} className="text-gold" aria-hidden />
-                        {contact.details.connectTitle}
-                      </h2>
-                      <div className="mt-3">
-                        <a
-                          href={brand.linkedinUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-btn border border-white/15 px-3.5 py-2 text-[14px] text-white/80 transition-all hover:border-gold hover:text-gold focus-ring-dark"
-                        >
-                          <Linkedin size={14} aria-hidden />
-                          LinkedIn
                         </a>
                       </div>
                     </div>

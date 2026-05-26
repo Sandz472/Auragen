@@ -14,7 +14,6 @@ export const brand = {
   phone: '+27 73 492 7363',
   phone2: '+27 73 282 8034',
   office: 'Johannesburg, South Africa',
-  linkedinUrl: 'https://www.linkedin.com/company/auragen',
   locale: 'en_ZA',
   founded: 2026,
 } as const;

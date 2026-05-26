@@ -80,7 +80,7 @@ const organizationLd = {
   legalName: brand.legal,
   url: seo.siteUrl,
   logo: `${seo.siteUrl}/icon-512.png`,
-  sameAs: [brand.linkedinUrl],
+  sameAs: [],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'enquiries',
