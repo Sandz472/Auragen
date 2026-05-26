@@ -10,8 +10,9 @@ export const brand = {
   tagline: 'Intelligent data. Measurable impact.',
   blurb:
     'A South African technology and consulting partner. We help organisations turn data into smarter decisions, faster operations and measurable business impact.',
-  email: 'hello@auragen.co.za',
-  phone: '+27 (placeholder)',
+  email: 'info@auragen.co.za',
+  phone: '+27 73 492 7363',
+  phone2: '+27 73 282 8034',
   office: 'Johannesburg, South Africa',
   linkedinUrl: 'https://www.linkedin.com/company/auragen',
   locale: 'en_ZA',

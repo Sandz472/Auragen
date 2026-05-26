@@ -95,9 +95,23 @@ export default function Footer() {
                   {brand.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/75">
+              <li className="flex items-start gap-3">
                 <Phone size={16} className="mt-0.5 shrink-0 text-gold/80" aria-hidden />
-                <span>{brand.phone}</span>
+                <a
+                  href={`tel:${brand.phone.replace(/\s/g, '')}`}
+                  className="text-white/75 transition-colors hover:text-gold focus-ring-dark rounded-sm"
+                >
+                  {brand.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={16} className="mt-0.5 shrink-0 text-gold/80" aria-hidden />
+                <a
+                  href={`tel:${brand.phone2.replace(/\s/g, '')}`}
+                  className="text-white/75 transition-colors hover:text-gold focus-ring-dark rounded-sm"
+                >
+                  {brand.phone2}
+                </a>
               </li>
               <li className="flex items-start gap-3 pt-2">
                 <a

@@ -55,12 +55,18 @@ export default function ContactForm() {
 
   const [status, setStatus] = useState<Status>('idle');
 
-  const onSubmit = async (_values: FormValues) => {
+  const onSubmit = async (values: FormValues) => {
     setStatus('submitting');
-    // Mock submission per spec: simulate network round-trip, then show success.
-    // Wire this to a real /api/contact endpoint (or external form service) later.
-    await new Promise((res) => setTimeout(res, 900));
-    setStatus('success');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
   };
 
   if (status === 'success') {
@@ -212,6 +218,16 @@ export default function ContactForm() {
           {...register('newsletter')}
         />
       </div>
+
+      {status === 'error' && (
+        <p role="alert" className="mt-6 rounded-md bg-red-50 px-4 py-3 text-[14px] text-red-700">
+          Something went wrong — please try again or email us directly at{' '}
+          <a href="mailto:info@auragen.co.za" className="underline">
+            info@auragen.co.za
+          </a>
+          .
+        </p>
+      )}
 
       <div className="mt-8 flex flex-col items-stretch gap-3 md:flex-row md:items-center md:justify-between">
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">

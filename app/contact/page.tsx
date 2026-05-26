@@ -74,10 +74,20 @@ export default function ContactPage() {
                           <Mail size={16} className="text-white/40 group-hover:text-gold" aria-hidden />
                           {brand.email}
                         </a>
-                        <p className="flex items-center gap-3 text-[15px] text-white/70">
-                          <Phone size={16} className="text-white/40" aria-hidden />
+                        <a
+                          href={`tel:${brand.phone.replace(/\s/g, '')}`}
+                          className="group flex items-center gap-3 text-[15px] text-white/85 transition-colors hover:text-gold focus-ring-dark rounded-sm"
+                        >
+                          <Phone size={16} className="text-white/40 group-hover:text-gold" aria-hidden />
                           {brand.phone}
-                        </p>
+                        </a>
+                        <a
+                          href={`tel:${brand.phone2.replace(/\s/g, '')}`}
+                          className="group flex items-center gap-3 text-[15px] text-white/85 transition-colors hover:text-gold focus-ring-dark rounded-sm"
+                        >
+                          <Phone size={16} className="text-white/40 group-hover:text-gold" aria-hidden />
+                          {brand.phone2}
+                        </a>
                       </div>
                     </div>
 
