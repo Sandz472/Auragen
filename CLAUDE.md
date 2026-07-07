@@ -12,7 +12,7 @@
 
 - **Stack:** Next.js (App Router) + TypeScript
 - **Run (dev):** `npm run dev`
-- **Typecheck:** `npx tsc --noEmit`
+- **Typecheck:** `npm run typecheck` (= `tsc --noEmit`)
 - **Test:** _none configured — add one (Gate 1)_
 - **Lint / format:** `npm run lint`
 - **Build:** `npm run build`  (prod start: `npm run start`)
