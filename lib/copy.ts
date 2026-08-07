@@ -220,7 +220,7 @@ export const contact = {
   },
   details: {
     officeTitle: 'Office',
-    officeLines: ['Johannesburg, South Africa', 'Full street address — TBC'],
+    officeLines: ['Johannesburg, South Africa'],
     directLinesTitle: 'Direct lines',
     connectTitle: 'Connect',
     responseTitle: 'Response time',
