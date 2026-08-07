@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 import { brand, footer, nav } from '@/lib/copy';
 import { services } from '@/lib/services';
 import Wordmark from './Wordmark';
@@ -31,6 +31,15 @@ export default function Footer() {
             <p className="mt-8 font-mono text-eyebrow uppercase tracking-[0.18em] text-white/55">
               <span className="text-gold">●</span>&nbsp;&nbsp;Based in Johannesburg
             </p>
+            <a
+              href={brand.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Aura Gen on LinkedIn"
+              className="mt-6 inline-flex h-9 w-9 items-center justify-center rounded-btn border border-white/15 text-white/75 transition-colors hover:border-gold hover:text-gold focus-ring-dark"
+            >
+              <Linkedin size={16} aria-hidden />
+            </a>
           </div>
 
           {/* Navigate column */}
