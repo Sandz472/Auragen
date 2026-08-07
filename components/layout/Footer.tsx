@@ -31,15 +31,6 @@ export default function Footer() {
             <p className="mt-8 font-mono text-eyebrow uppercase tracking-[0.18em] text-white/55">
               <span className="text-gold">●</span>&nbsp;&nbsp;Based in Johannesburg
             </p>
-            <a
-              href={brand.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Aura Gen on LinkedIn"
-              className="mt-6 inline-flex h-9 w-9 items-center justify-center rounded-btn border border-white/15 text-white/75 transition-colors hover:border-gold hover:text-gold focus-ring-dark"
-            >
-              <Linkedin size={16} aria-hidden />
-            </a>
           </div>
 
           {/* Navigate column */}
@@ -120,6 +111,17 @@ export default function Footer() {
                   className="text-white/75 transition-colors hover:text-gold focus-ring-dark rounded-sm"
                 >
                   {brand.phone2}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Linkedin size={16} className="mt-0.5 shrink-0 text-gold/80" aria-hidden />
+                <a
+                  href={brand.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/75 transition-colors hover:text-gold focus-ring-dark rounded-sm"
+                >
+                  LinkedIn
                 </a>
               </li>
             </ul>
